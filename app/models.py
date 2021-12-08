@@ -30,3 +30,42 @@ class Work(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Experience(models.Model):
+    occupation = models.CharField('occupation', max_length=100)
+    company = models.CharField('company', max_length=100)
+    description = models.TextField('explanation')
+    place = models.CharField('place', max_length=100)
+    period = models.CharField('period', max_length=100)
+    
+    def __str__(self):
+        return self.occupation
+
+
+class Education(models.Model):
+    course = models.CharField('course', max_length=100)
+    school = models.CharField('school', max_length=100)
+    place = models.CharField('place', max_length=100)
+    period = models.CharField('period', max_length=100)
+
+    def __str__(self):
+        return self.course
+
+
+class Software(models.Model):
+    name = models.CharField('Software', max_length=100)
+    level = models.CharField('Level', max_length=100)
+    percentage = models.IntegerField('Percentage')
+    
+    def __str__(self):
+        return self.name
+
+
+class Technical(models.Model):
+    name = models.CharField('Technical', max_length=100)
+    level = models.CharField('Level', max_length=100)
+    percentage = models.IntegerField('Percentage')
+
+    def __str__(self):
+        return self.name
